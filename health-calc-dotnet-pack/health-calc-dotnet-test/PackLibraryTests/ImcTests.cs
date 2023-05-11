@@ -18,6 +18,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
             Assert.Equal(expetedImc, result);
         }
 
+
         [Fact]
         public void ValidateImc_whenInvalidInput_thenReturnFalse()
         {
@@ -55,10 +56,10 @@ namespace health_calc_dotnet_test.PackLibraryTests
         }
 
         [Fact]
-        public void whenValidInput_ThenReturnImcNormalCategory_()
+        public void whenValidInput_ThenReturnImcNormalLim1Category()
         {
             IImc imc = new Imc();
-            double valorIMC = 24.8;
+            double valorIMC = 18.5;
             string expeted = "NORMAL";
 
             var result = imc.GetImcCategory(valorIMC);
@@ -67,10 +68,22 @@ namespace health_calc_dotnet_test.PackLibraryTests
         }
 
         [Fact]
-        public void whenValidInput_ThenReturnImcOverWeightCategory_()
+        public void whenValidInput_ThenReturnImcNormalLim2Category()
         {
             IImc imc = new Imc();
-            double valorIMC = 29.8;
+            double valorIMC = 24.9;
+            string expeted = "NORMAL";
+
+            var result = imc.GetImcCategory(valorIMC);
+
+            Assert.Equal(expeted, result);
+        }
+
+        [Fact]
+        public void whenValidInput_ThenReturnImcOverWeightLim1Category()
+        {
+            IImc imc = new Imc();
+            double valorIMC = 25.0;
             string expeted = "OVERWEIGHT";
 
             var result = imc.GetImcCategory(valorIMC);
@@ -78,12 +91,23 @@ namespace health_calc_dotnet_test.PackLibraryTests
             Assert.Equal(expeted, result);
         }
 
-
         [Fact]
-        public void whenValidInput_ThenReturnImcObesityCategory_()
+        public void whenValidInput_ThenReturnImcOverWeightLim2Category()
         {
             IImc imc = new Imc();
-            double valorIMC = 39.8;
+            double valorIMC = 29.9;
+            string expeted = "OVERWEIGHT";
+
+            var result = imc.GetImcCategory(valorIMC);
+
+            Assert.Equal(expeted, result);
+        }
+
+        [Fact]
+        public void whenValidInput_ThenReturnImcObesityLim1Category()
+        {
+            IImc imc = new Imc();
+            double valorIMC = 30.0;
             string expeted = "OBESITY";
 
             var result = imc.GetImcCategory(valorIMC);
@@ -92,7 +116,19 @@ namespace health_calc_dotnet_test.PackLibraryTests
         }
 
         [Fact]
-        public void whenValidInput_ThenReturnImcSeriousObesityCategory_()
+        public void whenValidInput_ThenReturnImcObesityLim2Category()
+        {
+            IImc imc = new Imc();
+            double valorIMC = 39.9;
+            string expeted = "OBESITY";
+
+            var result = imc.GetImcCategory(valorIMC);
+
+            Assert.Equal(expeted, result);
+        }
+
+        [Fact]
+        public void whenValidInput_ThenReturnImcSeriousObesityCategory()
         {
             IImc imc = new Imc();
             double valorIMC = 40.1;
@@ -102,5 +138,6 @@ namespace health_calc_dotnet_test.PackLibraryTests
 
             Assert.Equal(expeted, result);
         }
+
     }
 }
