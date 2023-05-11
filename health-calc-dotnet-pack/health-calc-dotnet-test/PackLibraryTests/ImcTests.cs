@@ -139,7 +139,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         }
 
         [Fact]
-        public void Categorizeundefined_whenInvalidInput_ThenReturnUndefinedCategory()
+        public void CategorizeUndefined_whenInvalidInput_ThenReturnUndefinedCategory()
         {
             IImc imc = new Imc();
             double valorIMC = 0.1;
