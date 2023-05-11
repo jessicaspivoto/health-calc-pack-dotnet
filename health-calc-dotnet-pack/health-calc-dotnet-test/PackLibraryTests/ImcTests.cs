@@ -137,5 +137,17 @@ namespace health_calc_dotnet_test.PackLibraryTests
 
             Assert.Equal(expeted, result);
         }
+
+        [Fact]
+        public void Categorizeundefined_whenInvalidInput_ThenReturnUndefinedCategory()
+        {
+            IImc imc = new Imc();
+            double valorIMC = 0.1;
+            string expeted = "UNDEFINED";
+
+            var result = imc.GetImcCategory(valorIMC);
+
+            Assert.Equal(expeted, result);
+        }
     }
 }

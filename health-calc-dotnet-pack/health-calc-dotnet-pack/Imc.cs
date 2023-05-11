@@ -13,7 +13,7 @@ namespace health_calc_dotnet_pack
         {
            switch (imc)
             {
-                case < 18.5:
+                case >= 15.0 and < 18.5:
                     return "SLIMNESS";
                 case >= 18.5 and < 25.0:
                     return "NORMAL";
