@@ -2,7 +2,7 @@
 
 namespace health_calc_dotnet_pack
 {
-    public class Imc : IImc
+    public class Bmi : IBmi
     {
         public double Calc(double height, double weight)
         {

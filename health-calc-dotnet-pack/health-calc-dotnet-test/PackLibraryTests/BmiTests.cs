@@ -3,12 +3,12 @@ using health_calc_dotnet_pack.Interfaces;
 
 namespace health_calc_dotnet_test.PackLibraryTests
 {
-    public class ImcTests
+    public class BmiTests
     {
         [Fact]
         public void CalculateImc_whenValidInput_thenReturnIndex()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double height = 1.68;
             double weight = 72.0;
             double expetedImc = 25.5;
@@ -21,7 +21,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void ValidateImc_whenInvalidInput_thenReturnFalse()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double height = 10.68;
             double weight = 72.0;
             
@@ -33,7 +33,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void ValidateImc_whenValidInput_thenReturnTrue()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double height = 1.80;
             double weight = 97.0;
 
@@ -45,7 +45,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeSlimness_whenValidInput_ThenReturnImcSlimnessCategory()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 18.4;
             string expeted = "SLIMNESS";
 
@@ -57,7 +57,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeNormal_whenValidInput_ThenReturnImcNormalLim1Category()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 18.5;
             string expeted = "NORMAL";
 
@@ -69,7 +69,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeNormal_whenValidInput_ThenReturnImcNormalLim2Category()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 24.9;
             string expeted = "NORMAL";
 
@@ -81,7 +81,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeOverweight_whenValidInput_ThenReturnImcOverweightLim1Category()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 25.0;
             string expeted = "OVERWEIGHT";
 
@@ -93,7 +93,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeOverweight_whenValidInput_ThenReturnImcOverweightLim2Category()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 29.9;
             string expeted = "OVERWEIGHT";
 
@@ -105,7 +105,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeObesity_whenValidInput_ThenReturnImcObesityLim1Category()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 30.0;
             string expeted = "OBESITY";
 
@@ -117,7 +117,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeObesity_whenValidInput_ThenReturnImcObesityLim2Category()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 39.9;
             string expeted = "OBESITY";
 
@@ -129,7 +129,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeSeriousObesity_whenValidInput_ThenReturnImcSeriousObesityCategory()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 40.1;
             string expeted = "SERIOUS OBESITY";
 
@@ -141,7 +141,7 @@ namespace health_calc_dotnet_test.PackLibraryTests
         [Fact]
         public void CategorizeUndefined_whenInvalidInput_ThenReturnUndefinedCategory()
         {
-            IImc imc = new Imc();
+            IBmi imc = new Bmi();
             double valorIMC = 0.1;
             string expeted = "UNDEFINED";
 
